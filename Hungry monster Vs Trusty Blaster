@@ -1,0 +1,30 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <bits/stdc++.h>
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    int n,hit,t;
+    cin>>n>>hit>>t;
+    int m[n];
+    for(int i=0; i<n; i++){
+        cin>>m[i];
+    }
+    sort(m,m+n);
+    int j=0,count=0;
+    while(t--)
+    {
+        m[j]-=hit;
+        if(m[j]<=0){
+            count++;
+            j++;
+            }
+    }
+    cout<<count;
+    return 0;
+}
